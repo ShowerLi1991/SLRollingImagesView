@@ -37,7 +37,9 @@
 ![(Pic3)](http://www.52772577.com/content/images/SL/SLRollingImagesView44.gif)
 
      ## Custom CollectionLayout
-![(Pic4)](http://www.52772577.com/content/images/SL/SLRollingImagesVIewPic33.jpg)
+![(Pic4)](http://www.52772577.com/content/images/SL/SLRollingImagesVIewPic33.png)
+![(Pic5)](http://www.52772577.com/content/images/SL/SLRollingImagesVIewPic44.png)
+![(Pic6)](http://www.52772577.com/content/images/SL/SLRollingImagesVIewPic55.png)
 
 
      
