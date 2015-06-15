@@ -8,7 +8,7 @@
      @param details              // If no need, set it nil, the count of details must be compatiable with imageURLs
      @return SLRollingView
      
-#Using like this : 
+#Using like this : (Xcode7)
 
     NSArray * details = @[@"星空", @"星河", @"星辰", @"星相", @"星宿", @"星斗"];
     
