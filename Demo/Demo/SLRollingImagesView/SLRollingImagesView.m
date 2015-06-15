@@ -46,6 +46,13 @@
 
 static  NSString * cellID = @"SLRIV";
 
++ (instancetype)sl_rollingViewWithFrame:(CGRect)frame andImageURLs:(NSArray *)imageURLs {
+    return [self sl_rollingViewWithFrame:frame andImageURLs:imageURLs andShowImageDetails:nil];
+}
+
++ (instancetype)sl_rollingViewWithFrame:(CGRect)frame andImageURLs:(NSArray *)imageURLs andShowImageDetails:(NSArray *)details {
+    return [self sl_rollingViewWithFrame:frame collectionViewLayout:nil withReferences:nil withImageURLs:imageURLs andShowImageDetails:details];
+}
 
 + (instancetype)sl_rollingViewWithFrame:(CGRect)frame collectionViewLayout:(void (^)(UICollectionViewFlowLayout *))collectionViewLayout withReferences:(void (^)(SLRollingParameter *))parameters withImageURLs:(NSArray *)imageURLs andShowImageDetails:(NSArray *)details {
     
@@ -54,11 +61,15 @@ static  NSString * cellID = @"SLRIV";
     }
     
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
+    
     layout.itemSize= frame.size;
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    collectionViewLayout(layout);
+    
+    if (collectionViewLayout) {
+        collectionViewLayout(layout);
+    }
     
     SLRollingImagesView * rolling = [[self alloc] initWithFrame:frame collectionViewLayout:layout withReferences:parameters withImageURLs:imageURLs andShowImageDetails:(NSArray *)details];
     
@@ -84,7 +95,10 @@ static  NSString * cellID = @"SLRIV";
         self.imageURLs = imageURLs;
         
         self.parameter = [[SLRollingParameter alloc] init];
-        parameters(self.parameter);
+        
+        if (parameters) {
+            parameters(self.parameter);
+        }
         
         /// 循环判断
         [self isLoopBlock:^{
@@ -102,7 +116,7 @@ static  NSString * cellID = @"SLRIV";
             
             CGSize exceptSize = [pc sizeForNumberOfPages:self.imageURLs.count];
             
-            //            NSLog(@"expected %@", NSStringFromCGSize(exceptSize));
+            // NSLog(@"expected %@", NSStringFromCGSize(exceptSize));
             
             pc.bounds = CGRectMake(0, 0, exceptSize.width, exceptSize.height);
             
@@ -272,11 +286,11 @@ static  NSString * cellID = @"SLRIV";
     
     NSInteger index =  [self collectionViewCellForIndexOfImageAtIndexPath:indexPath];
     
-    //    NSLog(@"cell indexpath.item = %@, index = %@", @(indexPath.item), @(index));
+    // NSLog(@"cell indexpath.item = %@, index = %@", @(indexPath.item), @(index));
     
     [cell layoutIfNeeded];
     
-#warning TODO 改成自定义webimage
+#warning 改成自定义webimage
     [cell.imageView sd_setImageWithURL:self.imageURLs[index]];
     
     

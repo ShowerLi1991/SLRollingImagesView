@@ -41,6 +41,11 @@
  */
 + (instancetype)sl_rollingViewWithFrame:(CGRect)frame collectionViewLayout:(void(^)(UICollectionViewFlowLayout * layout))collectionViewLayout withReferences:(void (^)(SLRollingParameter * para))parameters withImageURLs:(NSArray *)imageURLs andShowImageDetails:(NSArray *)details;
 
++ (instancetype)sl_rollingViewWithFrame:(CGRect)frame andImageURLs:(NSArray *)imageURLs;
+
++ (instancetype)sl_rollingViewWithFrame:(CGRect)frame andImageURLs:(NSArray *)imageURLs andShowImageDetails:(NSArray *)details;
+
+
 @property (strong, nonatomic) SLRollingParameter * parameter;
 
 @end

@@ -49,6 +49,11 @@
         
     } withImageURLs:self.imageURLs andShowImageDetails:details];
     
+    
+//    SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) andImageURLs:self.imageURLs andShowImageDetails:details];
+    
+//    SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) andImageURLs:self.imageURLs];
+    
     [self.view addSubview:rolling];
     
     
