@@ -36,7 +36,8 @@
     
     NSArray * details = @[@"星空", @"星河", @"星辰", @"星相", @"星宿", @"星斗"];
     
-    
+//## 1
+
     SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) collectionViewLayout:^(UICollectionViewFlowLayout *layout) {
         
         
@@ -49,12 +50,22 @@
         
     } withImageURLs:self.imageURLs andShowImageDetails:details];
     
+    [self.view addSubview:rolling];
+
+    
+//## 2
+
     
 //    SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) andImageURLs:self.imageURLs andShowImageDetails:details];
+//    
+//    [self.view addSubview:rolling];
+
     
+//## 3
+
 //    SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) andImageURLs:self.imageURLs];
-    
-    [self.view addSubview:rolling];
+//    
+//    [self.view addSubview:rolling];
     
     
     
