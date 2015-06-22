@@ -8,27 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-@interface SLRollingParameter : NSObject
-
-/// autoPlay default is NO.
-@property (assign, nonatomic, getter = isTiming) BOOL timing;
-/// if timing is YES, set the timing durantion, default is 2.0, and the least duration is 0.5.
-@property (assign, nonatomic) NSTimeInterval duration;
-/// loopPlaying default is NO.
-@property (assign, nonatomic, getter = isLoop) BOOL loop;
-/// showPageIndicator default is NO.
-@property (assign, nonatomic, getter = isShowPageIndicator) BOOL showPageIndicator;
-
-@end
-
-
-
+@class SLRollingParameter;
 @interface SLRollingImagesView : UICollectionView
-
-
-
 
 /**
  Creat a collectionView of rolling imageViews quickly with imageURLs and details by parameters.
@@ -47,6 +28,20 @@
 
 
 @property (strong, nonatomic) SLRollingParameter * parameter;
+
+@end
+
+
+@interface SLRollingParameter : NSObject
+
+/// autoPlay default is NO.
+@property (assign, nonatomic, getter = isTiming) BOOL timing;
+/// if timing is YES, set the timing durantion, default is 2.0, and the least duration is 0.5.
+@property (assign, nonatomic) NSTimeInterval duration;
+/// loopPlaying default is NO.
+@property (assign, nonatomic, getter = isLoop) BOOL loop;
+/// showPageIndicator default is NO.
+@property (assign, nonatomic, getter = isShowPageIndicator) BOOL showPageIndicator;
 
 @end
 

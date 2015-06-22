@@ -10,19 +10,6 @@
 #import "SLRollingImagesCell.h"
 #import "UIImageView+WebCache.h"
 
-@implementation SLRollingParameter
-
-- (NSTimeInterval)duration {
-    if (_duration < 0.5) {
-        _duration = 2.0;
-    }
-    return _duration;
-}
-
-
-@end
-
-
 @interface SLRollingImagesView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSArray * imageURLs;
@@ -337,3 +324,13 @@ static  NSString * cellID = @"SLRIV";
 
 @end
 
+@implementation SLRollingParameter
+
+- (NSTimeInterval)duration {
+    if (_duration < 0.5) {
+        _duration = 2.0;
+    }
+    return _duration;
+}
+
+@end

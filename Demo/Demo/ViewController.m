@@ -20,7 +20,7 @@
 - (NSArray *)imageURLs {
     if (!_imageURLs) {
         NSMutableArray * arrayM = [NSMutableArray arrayWithCapacity:6];
-        for (NSInteger num = 0; num < 6; num++) {
+        for (NSInteger num = 0; num < 16; num++) {
             
             NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.52772577.com/content/images/2015/05/wallpaper/%@.jpg", @(num)]];
             
@@ -40,15 +40,16 @@
 
     SLRollingImagesView * rolling = [SLRollingImagesView sl_rollingViewWithFrame:CGRectMake(0, 0, 375, 200) collectionViewLayout:^(UICollectionViewFlowLayout *layout) {
         
+        layout.minimumInteritemSpacing = 10;
         
     } withReferences:^(SLRollingParameter * para) {
         
         para.loop = YES;
         para.showPageIndicator = YES;
         para.timing = YES;
-        para.duration = 4.0;
+//        para.duration = 2.0;
         
-    } withImageURLs:self.imageURLs andShowImageDetails:details];
+    } withImageURLs:self.imageURLs andShowImageDetails:nil];
     
     [self.view addSubview:rolling];
 
